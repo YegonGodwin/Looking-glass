@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CleanTech ideals</title>
-    <link rel="icon" href="Assets/Images/iot.jpeg" type="image/x-icon">
+    <link rel="icon" href="Assets/Images/premium.avif" type="image/x-icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Oswald:wght@500&display=swap" />
     <link rel="stylesheet" href="assets/plugins/bootstrap/bootstrap.min.css" />
