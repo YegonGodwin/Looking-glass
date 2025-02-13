@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+}
+.header {
+    margin-bottom: 25px;
+}
+.header ul li{
+    color: white;
+}
+footer{
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+#hero .carousel-item {
+    height: 500px;
+}
+#gradient-text{
+    font-weight: bold;
+}
+main{
+    background-image: url('Assets/Images/stephen.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#hero .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero .carousel-caption h5 {
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: -100px;
+    padding: 10px;
+    border-radius: 5px;
+}/*
+@media screen{
+    #hero .carousel-caption h5{
+        font-size: 1.2rem;
+        padding: 10px;
+        
+    }        
+}*/
+#hero .carousel-caption h7{
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: -100px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link i.bi {
+    margin-right: 5px; /* Adjust the space between the icon and text */
+    font-size: 1.2em; /* Adjust the size of the icon */
+}
+
+.navbar .navbar-nav .nav-link {
+    padding: 10px 15px; /* Adjust padding as needed */
+}
+html{
+    scroll-behavior: smooth;
+}
+.footer {
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+}
+
+.col-6 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.col-6 a:hover {
+    color: #ddd;
+}
