@@ -1,6 +1,6 @@
 # CleanTech Ideals - Modern Web Solution
 
-![CleanTech Logo](assets/images/logo.png) <!-- Add your logo path -->
+![CleanTech Logo]([assets/images/logo.png](https://www.pinterest.com/pin/10766486606004562/)) <!-- Add your logo path -->
 
 ## Project Description
 
