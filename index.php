@@ -3,368 +3,851 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CleanTech ideals</title>
+    <title>CleanTech Ideals - Innovative Technology Solutions</title>
     <link rel="icon" href="Assets/Images/premium.avif" type="image/x-icon">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&family=Oswald:wght@500&display=swap" />
-    <link rel="stylesheet" href="assets/plugins/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/plugins/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/plugins/magnific-isotope/magnific-popup.min.css" />
-    <link rel="stylesheet" href="assets/plugins/sweetalert/sweetalert.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="shortcut icon" href="..Assets/Images/stephen.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #00b4d8;
+            --secondary-color: #0077b6;
+            --accent-color: #90e0ef;
+            --dark-color: #03045e;
+            --light-color: #caf0f8;
+            --gradient-blue: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+            --gradient-purple: linear-gradient(135deg, #03045e 0%, #023e8a 100%);
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        /* Navbar */
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            background: var(--gradient-blue) !important;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: var(--gradient-purple) !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            background: linear-gradient(to right, #fff, var(--light-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 8px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-nav {
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+        
+        .hero-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .feature-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0, 180, 216, 0.05), rgba(0, 119, 182, 0.05));
+            position: relative;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-blue);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient-purple);
+            color: white;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            padding-left: 20px;
+        }
+        
+        textarea.form-control {
+            height: auto;
+            padding-top: 15px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--light-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .footer-links h5 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        .animate-up {
+            animation: fadeInUp 1s ease;
+        }
+        
+        .animate-down {
+            animation: fadeInDown 1s ease;
+        }
+        
+        .animate-left {
+            animation: fadeInLeft 1s ease;
+        }
+        
+        .animate-right {
+            animation: fadeInRight 1s ease;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
-<body style="background-color: lightgray;">
-    <header class="header contain-to-grid bg-secondary shadow-lg">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <h3 class="fst-italic" style="font-family: 'Times New Roman', Times, serif; background: linear-gradient(to right, #ff6e7f, #bfe9ff); color: transparent; font-size: 2em; font-weight: bold; -webkit-background-clip: text;" data-animate-hover="shake" id="gradient-text"></h3>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">CleanTech</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown"><!--lass="collapse navbar-collapse" id="navbarNavDropdown---->
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="#"><i class="bi bi-house-fill"></i>Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#services"><i class="bi bi-gear-fill"></i>Services</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#"><i class="bi bi-book-fill"></i>Short Novels</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#aboutUs"><i class="bi bi-info-circle-fill"></i>About Us</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#contact"><i class="bi bi-envelope-fill"></i>Contact</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-success text-light" href="#" data-toggle="modal" data-target="#registerModal"><i class="bi bi-box-arrow-in-right"></i>Register</a></li>
-                    &nbsp;
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-light" href="#" data-toggle="modal" data-target="#loginmodal"><i class="bi bi-person-plus-fill"></i>Login</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 my-2 my-lg-0">
+                        <a class="btn btn-light btn-nav" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-outline-light btn-nav" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+                    </li>
                 </ul>
             </div>
-        </nav>
-    </header>
-    <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="background: #f7f7f7;">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary fw-bold" id="loginModalLabel"><i class="bi bi-person-fill"></i>Sign IN</h5>
-                     <button class="close" data-dismiss="modal" arai-label="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="./Include/login.php" id="loginForm" method="post">
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" placeholder="Enter email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="pword" id="" class="form-control" placeholder="Enter your password" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Login" class="btn btn-outline-success"><i class="fa fa-sign-in"></i>
-                            &nbsp;
-                            <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
-    </div>
-    <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true" aria-labelledby="registerModalLabel">
-        <div class="modal-dialog" style="background: #f7f7f7;" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-primary fst-italic">Sign Up</h4>
-                    <button data-dismiss="modal" aria-label="close" class="close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="./Include/register.php" id="registerform" method="post">
-                        <div class="form-group">
-                            <input type="text" name="name" id="" class="form-control" placeholder="Enter username"required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" id="" class="form-control" placeholder="Email address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="pword" id="" class="form-control" placeholder="Set password" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Register" class="btn btn-outline-primary">
-                            &nbsp;
-                            <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    </nav>
 
-    <section id="hero">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="Assets/Images/lukas.jpg" alt="First slide">
-                    <div class="carousel-caption d-md-block di-1 me-md-3 me-2">
-                        <div data-swiper-parallax="-300">
-                            <h5 class="slide-text text-white animated" 
-                                data-animation="fadeInUp">Welcome to Our Store<br> <span class="text-primary fst-italic">Being Smart is Our Game</span></h5>
-                                <p class="slide-text mt-3 mb-4 text-white animated di-1-5 me-3"
-                                                data-animation="fadeInUp">We provide innovative, eye-catching solutions
-                                                that help brands to stand out from the crowd</p>
-                                                <br><br>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="d-block w-100 h-100 object-fit-cover" alt="CleanTech Solutions">
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="Assets/Images/analytics.jpg" alt="Second slide">
-                    <div class="carousel-caption d-md-block">
-                        <h5 id="typed">Discover Unique Items<br>
-                            <span id="element"  class="text-success"></span></h5>
-                            <p class="text-light">Getting the most out of this website company</p>
-                    </div>
-                    <!--- ---->
+                <div class="carousel-item h-100">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Innovative Technology">
                 </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="Assets/Images/scott.jpg" alt="Third slide">
-                    <div class="carousel-caption d-md-block">
-                        <h5>Buy and Enjoy</h5>
-                        <p class="slide-text mt-3 mb-4 text-success animated di-1-5 me-3"
-                                                data-animation="fadeInUp">Every great business idea takes wings with the
-                                                launch of a professionally designed website</p>
-                    </div>
+                <div class="carousel-item h-100">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Digital Solutions">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
-    <section class="section-top-first mb-5" id="aboutUs">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-4 mt-3 p-md-0 rounded border" style="background-color: yellow; color: gray;">
-                    <div class="p-5 section-yellow">
-                        <h4 class="fw-bold text-primary">Strategy</h4>
-                        <p class="pt-4">This is where we validate your future users and define the project
-                            It consists of a working plan in which the users' needs are met with a solution that
-                            fulfils the business goals 
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-3 p-md-0 bg-light  rounded border">
-                    <div class="p-5 section-light">
-                        <h4>Marketing</h4>
-                        <p class="pt-4 text-text">Digital marketing is the only way to stay ahead, when you're a
-                                business owner the online world can seem intimidating, we provides your business a
-                                successful digital planning throw our marketing team</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 mt-3 p-md-0 bg-primary rounded border">
-                    <div class="p-5 section-blue text-light">
-                        <h4>Technology</h4>
-                        <p class="pt-4">
-                            CleanTech corporation has technical impressive experts.
-                            They will dig into your business, discuss the work scope, challenges and consult on the most appropriate
-                            technological solutions
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <main class="page-image-title" id="services" style="background-image: url('Assets/Images/watts.jpg'); 
-    background-size: cover; background-repeat: no-repeat;">
-
-<section class="section">
-    <div class="section"></div>
-    <div class="section content">
-        <div class="container">
-            <h1 class="text-warning fst-italised">Our Services</h1>
-        </div>
-    </div>
-</section>
-<section class="section-light section-padding-08">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center text-light">
-                <h2 class="font-size-2-5 mb-4">We design, develop and market digital products
-                    <br>that give brands a competitive advantage
-                </h2>
-                <p class="text-light font-size-1-06">Our focus is on solving business challenges with
-                    cutting-edge solutions</p>
-                    <a href="" class="btn btn-outline-warning mb-2">Discover</a>
-            </div>
-        </div>
-    </div>
-</section>
-</main>
-<!------
-<div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="img/camera.png" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <img src="img/coffee.png" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <img src="img/color.png" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <img src="img/horse.png" style="width:100%">
-        </div>
-
-        <div class="header2">
-            <h1 class="wel">WELCOME TO</h1>
-            <br><br>
-            <h1 class="angle">HAVANA HOTEL</h1>
-            <p>Feels like home</p>
-        </div>
-    </div>
------->
-    <section id="featured-items" class="container mt-1">
-        <h2 class="text-center">Featured Items</h2>
-        <div class="row justify-content-center">
-            <!-- Featured odds and novels will go here -->
-        </div>
-    </section>
-    <!---contact us section----->
-    <main class="page-image-title mb-3 mt-2 bg-secondary" style="background-image: url('Assets/Images/.jpg');
-    background-size: cover; background-position: center; 
-    background-repeat: no-repeat; border-radius: 9px;">
-
-        <section class="section-parallax page-image-title" id="contact">
-            <div class="section-mask"></div>
-            <div class="section-content">
-                <div class="container">
-                    <h1 class="text-white">Contact us</h1>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-white section-padding-08">
-            <div class="container">
+        
+        <div class="container h-100">
+            <div class="hero-content">
                 <div class="row">
-
-                    <div class="col-lg-6 px-md-5 mb-5 mb-lg-0">
-                        <h4 class="text-dark">Say Hi!</h4>
-                        <h2 class="text-dark font-size-3">Whenever you need us, we’re <span
-                                class="text-blue">here</span> for you</h2>
-                        <p class="pt-4 pb-5 text-text">We’re here to help and answer any question you might have, we
-                            look forward to hearing from you.</p>
-                        <h6 class="d-inline-block me-5"><a href="tel:+254" class="text-white">+254
-                            163</a></h6>
-                        <h6 class="d-inline-block"><a href="mailto:clean@technet.com"
-                                class="text-white">clean@technet.com</a></h6>
+                    <div class="col-lg-8">
+                        <h1 class="hero-title animate__animated animate__fadeInDown">Innovative Technology Solutions</h1>
+                        <p class="hero-subtitle animate__animated animate__fadeInDown delay-1">We provide cutting-edge digital solutions that help your business stand out in the competitive market. Our team of experts delivers quality and innovation.</p>
+                        <div class="animate__animated animate__fadeInDown delay-2">
+                            <a href="#services" class="btn btn-primary btn-lg hero-btn me-3">Our Services</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg hero-btn">Contact Us</a>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="col-lg-6 px-md-5 mt-2 mb-2 rounded border" style="background-color: lightblue;">
-                        <h3 class="mb-4">Post a Comment</h3>
-                        <form action="./include/contactform.php" id="contactform" method="post">
-                            <div class="row">
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3 animate__animated animate__fadeIn">Why Choose CleanTech</h2>
+                    <p class="lead text-muted animate__animated animate__fadeIn delay-1">We combine innovation, technology and strategy to deliver outstanding results for our clients</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="feature-title">Innovative Strategy</h3>
+                        <p class="text-muted">We validate your future users and define the project with a working plan that meets user needs while fulfilling business goals.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp delay-1">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="feature-title">Digital Marketing</h3>
+                        <p class="text-muted">Our marketing team provides successful digital planning to help your business stay ahead in the online world.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInUp delay-2">
+                    <div class="feature-card p-4 text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="feature-title">Advanced Technology</h3>
+                        <p class="text-muted">Our technical experts analyze your business challenges and consult on the most appropriate technological solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                                <div class="col-lg-12">
-                                    <div class="form-outline mb-4">
-                                        <textarea class="form-control" id="contactformcomment" name="contactformcomment"
-                                            placeholder="Comment"></textarea>
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3 text-dark animate__animated animate__fadeIn">Our Services</h2>
+                    <p class="lead text-muted animate__animated animate__fadeIn delay-1">We design, develop and market digital products that give brands a competitive advantage</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInLeft">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p class="text-muted">Custom websites and web applications built with the latest technologies to ensure performance, security and scalability.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInLeft delay-1">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Apps</h3>
+                        <p class="text-muted">Cross-platform mobile applications that provide seamless user experiences across iOS and Android devices.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInLeft delay-2">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Digital Marketing</h3>
+                        <p class="text-muted">Comprehensive digital marketing strategies including SEO, social media, PPC and content marketing to grow your business.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInRight">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p class="text-muted">Beautiful, intuitive user interfaces designed to enhance user experience and drive engagement with your product.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInRight delay-1">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Solutions</h3>
+                        <p class="text-muted">Secure and scalable cloud infrastructure solutions tailored to your business needs and growth objectives.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4 animate__animated animate__fadeInRight delay-2">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Data Analytics</h3>
+                        <p class="text-muted">Powerful data analytics and business intelligence solutions to help you make informed, data-driven decisions.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn more <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate__animated animate__fadeInLeft">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Our Team" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <h2 class="display-5 fw-bold mb-4">About CleanTech</h2>
+                    <p class="lead text-muted mb-4">We are a team of passionate technologists, designers and strategists dedicated to helping businesses thrive in the digital age.</p>
+                    <p>Founded in 2015, CleanTech has grown from a small startup to a leading technology solutions provider, serving clients across multiple industries worldwide. Our approach combines technical expertise with creative thinking to deliver solutions that are both functional and beautiful.</p>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="me-4">
+                            <h3 class="text-primary mb-0">150+</h3>
+                            <p class="text-muted mb-0">Projects</p>
+                        </div>
+                        <div class="me-4">
+                            <h3 class="text-primary mb-0">50+</h3>
+                            <p class="text-muted mb-0">Clients</p>
+                        </div>
+                        <div>
+                            <h3 class="text-primary mb-0">98%</h3>
+                            <p class="text-muted mb-0">Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3">What Our Clients Say</h2>
+                    <p class="lead text-muted">Don't just take our word for it - hear from some of our satisfied clients</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="swiper testimonialSwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="card border-0 shadow-sm p-4">
+                                    <div class="card-body text-center">
+                                        <div class="mb-4">
+                                            <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle" width="80" height="80" alt="Client">
+                                        </div>
+                                        <p class="lead mb-4">"CleanTech transformed our online presence with a stunning new website and digital marketing strategy that doubled our leads in just 3 months."</p>
+                                        <h5 class="mb-1">Sarah Johnson</h5>
+                                        <p class="text-muted">CEO, TechSolutions</p>
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-outline mb-4">
-                                        <input type="text" class="form-control" id="contactformname"
-                                            name="contactformname" placeholder="Name" />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-outline mb-4">
-                                        <input type="text" class="form-control" id="contactformemail"
-                                            name="contactformemail" placeholder="Email" />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-outline mb-4">
-                                        <input type="text" class="form-control" id="contactformphone"
-                                            name="contactformphone" placeholder="Phone" />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="form-outline mb-4">
-                                        <input type="text" class="form-control" id="contactformcountry"
-                                            name="contactformcountry" placeholder="Country" />
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 mb-2">
-                                    <button type="submit" class="btn btn-success" name="submit">Submit</button>
-                                </div>
-
                             </div>
+                            <div class="swiper-slide">
+                                <div class="card border-0 shadow-sm p-4">
+                                    <div class="card-body text-center">
+                                        <div class="mb-4">
+                                            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle" width="80" height="80" alt="Client">
+                                        </div>
+                                        <p class="lead mb-4">"The mobile app developed by CleanTech has been a game-changer for our business, with user engagement increasing by 150% since launch."</p>
+                                        <h5 class="mb-1">Michael Chen</h5>
+                                        <p class="text-muted">Director, RetailPlus</p>
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card border-0 shadow-sm p-4">
+                                    <div class="card-body text-center">
+                                        <div class="mb-4">
+                                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle" width="80" height="80" alt="Client">
+                                        </div>
+                                        <p class="lead mb-4">"Their cloud migration services saved us thousands in infrastructure costs while improving our system reliability and performance."</p>
+                                        <h5 class="mb-1">Emily Rodriguez</h5>
+                                        <p class="text-muted">CTO, FinTech Global</p>
+                                        <div class="text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-3 text-white">Get In Touch</h2>
+                    <p class="lead text-light">Have a project in mind or want to learn more about our services? We'd love to hear from you.</p>
+                </div>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <div class="pe-lg-5">
+                        <h3 class="text-white mb-4">Contact Information</h3>
+                        <p class="text-light mb-5">Fill out the form or reach out to us directly through the contact information below.</p>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-1">Location</h5>
+                                <p class="text-light mb-0">123 Tech Street, Silicon Valley, CA 94025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-1">Phone</h5>
+                                <p class="text-light mb-0">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-white mb-1">Email</h5>
+                                <p class="text-light mb-0">info@cleantech.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h5 class="text-white mb-3">Follow Us</h5>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <div class="contact-form">
+                        <h3 class="mb-4 text-dark">Send Us a Message</h3>
+                        <form>
+                            <div class="mb-4">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="mb-4">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-3">Send Message</button>
                         </form>
                     </div>
-
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
-    <section class="bg-info mb-2 rounded border">
-    <div class="container">
-        <div class="row justify-content-center footer">
-            <div class="col-5 text-center text-light">
-            <p>&COPY;2024 My Website. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a href="#" class="footer-logo">CleanTech</a>
+                    <p class="text-light mt-3">Innovative technology solutions to help your business grow and succeed in the digital world.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Services</h5>
+                        <ul>
+                            <li><a href="#">Web Development</a></li>
+                            <li><a href="#">Mobile Apps</a></li>
+                            <li><a href="#">Digital Marketing</a></li>
+                            <li><a href="#">UI/UX Design</a></li>
+                            <li><a href="#">Cloud Solutions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li class="text-light">123 Tech Street, Silicon Valley</li>
+                            <li class="text-light">CA 94025, United States</li>
+                            <li class="text-light">info@cleantech.com</li>
+                            <li class="text-light">+1 (555) 123-4567</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="col-6 text-center text-light">
-            <p class="text-light"><em>Get in touch with us</em> <strong>in:</strong></p>
-            <a href="https://wa.me/0727014233" target="_blank"><i class="fab fa-whatsapp"></i></a>&nbsp;&nbsp;
-            <a href="https://facebook.com/yourfacebookpage" target="_blank"><i class="fab fa-facebook"></i></a>&nbsp;&nbsp;
-            <a href="https://twitter.com/yourtwitterhandle" target="_blank"><i class="fab fa-twitter"></i></a>&nbsp;&nbsp;
-            <a href="https://instagram.com/instagramhandle" target="_blank"><i class="fab fa-instagram"></i></a>
+            
+            <hr class="my-5 bg-light opacity-10">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-light mb-0">&copy; 2023 CleanTech. All rights reserved.</p>
+                </div>
+
+                </div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="text-light">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-light">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
-    </div>
-    </div>
-</section>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./JS/script.js"></script>
-    <script src="./JS/front.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                            
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                    
-        });
-    });
-});
-    var typed = new Typed('#gradient-text', {
-        strings : ['Clean Technology'],
-        typeSpeed: 129,
-        backSpeed: 139,
-        looped: true,
-    });
-    var element = new Typed('#element', {
-        strings: ['Simply Inspiring Creativity'],
-        typeSpeed: 150,
-        looped: true,
-    })
-    </script>
-</body>
+        </div>
+    </footer>
+    </body>
 </html>
