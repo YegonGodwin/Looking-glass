@@ -77,5 +77,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Developed by** [Your Name]  
-**Contact**: your.email@example.com
+**Developed by** Godwin Kibet
+**Contact**: developer@lunacode.com
