@@ -334,6 +334,21 @@
             background: var(--primary-color);
             transform: translateY(-5px);
         }
+        /* Add this to your existing CSS */
+        .carousel-item {
+            transition: transform 1.2s ease-in-out;
+        }
+
+        .carousel-item img {
+            transition: opacity 1.2s ease-in-out;
+        }
+
+        /* Remove default carousel controls */
+        .carousel-control-prev,
+        .carousel-control-next,
+        .carousel-indicators {
+            display: none !important;
+        }
         
         /* Animations */
         .animate-up {
@@ -419,49 +434,109 @@
                     </li>
                 </ul>
             </div>
+               <!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-sign-in-alt me-2"></i>Login</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" method="post" action="includes/login.php">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" name="password" required>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <p class="mb-0">Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">Register here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2"></i>Register</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm" method="post" action="includes/register.php">
+                    <div class="mb-3">
+                        <label for="registerUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="registerUsername" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="registerPassword" name="password" required>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success">Register</button>
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <p class="mb-0">Already have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="hero-overlay"></div>
-        <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel">
-            <div class="carousel-inner h-100">
-                <div class="carousel-item active h-100">
-                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="d-block w-100 h-100 object-fit-cover" alt="CleanTech Solutions">
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Innovative Technology">
-                </div>
-                <div class="carousel-item h-100">
-                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" class="d-block w-100 h-100 object-fit-cover" alt="Digital Solutions">
-                </div>
+<section class="hero-section" id="home">
+    <div class="hero-overlay"></div>
+    <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                     class="d-block w-100 h-100 object-fit-cover" 
+                     alt="CleanTech Solutions">
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-item h-100">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     class="d-block w-100 h-100 object-fit-cover" 
+                     alt="Innovative Technology">
+            </div>
+            <div class="carousel-item h-100">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                     class="d-block w-100 h-100 object-fit-cover" 
+                     alt="Digital Solutions">
+            </div>
         </div>
-        
-        <div class="container h-100">
-            <div class="hero-content">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <h1 class="hero-title animate__animated animate__fadeInDown">Innovative Technology Solutions</h1>
-                        <p class="hero-subtitle animate__animated animate__fadeInDown delay-1">We provide cutting-edge digital solutions that help your business stand out in the competitive market. Our team of experts delivers quality and innovation.</p>
-                        <div class="animate__animated animate__fadeInDown delay-2">
-                            <a href="#services" class="btn btn-primary btn-lg hero-btn me-3">Our Services</a>
-                            <a href="#contact" class="btn btn-outline-light btn-lg hero-btn">Contact Us</a>
-                        </div>
+    </div>
+    
+    <div class="container h-100">
+        <div class="hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title animate__animated animate__fadeInDown">Innovative Technology Solutions</h1>
+                    <p class="hero-subtitle animate__animated animate__fadeInDown delay-1">We provide cutting-edge digital solutions that help your business stand out in the competitive market. Our team of experts delivers quality and innovation.</p>
+                    <div class="animate__animated animate__fadeInDown delay-2">
+                        <a href="#services" class="btn btn-primary btn-lg hero-btn me-3">Our Services</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg hero-btn">Contact Us</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Features Section -->
     <section class="features-section" id="features">
@@ -616,7 +691,6 @@
             </div>
         </div>
     </section>
-
     <!-- Testimonials Section -->
     <section class="py-5 bg-white">
         <div class="container">
@@ -849,5 +923,57 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./JS/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./JS/front.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                            
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                    
+        });
+    });
+});
+    var typed = new Typed('#gradient-text', {
+        strings : ['Clean Technology'],
+        typeSpeed: 129,
+        backSpeed: 139,
+        looped: true,
+    });
+    var element = new Typed('#element', {
+        strings: ['Simply Inspiring Creativity'],
+        typeSpeed: 150,
+        looped: true,
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+    var myCarousel = document.getElementById('heroCarousel');
+    var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 5000,
+        wrap: true,
+        pause: false,
+        touch: true
+    });
+    
+    // Add smooth fade effect between slides
+    myCarousel.addEventListener('slide.bs.carousel', function () {
+        var activeItem = this.querySelector('.carousel-item.active');
+        activeItem.style.opacity = 0;
+    });
+    
+    myCarousel.addEventListener('slid.bs.carousel', function () {
+        var activeItem = this.querySelector('.carousel-item.active');
+        activeItem.style.opacity = 1;
+    });
+});
+    </script>
     </body>
 </html>
