@@ -1,10 +1,11 @@
 # CleanTech Ideals - Modern Web Solution
 
-![CleanTech Logo]([assets/images/logo.png](https://www.pinterest.com/pin/10766486606004562/)) <!-- Add your logo path -->
+![CleanTech Logo](<[assets/images/logo.png](https://www.pinterest.com/pin/10766486606004562/)>) <!-- Add your logo path -->
 
 ## Project Description
 
 CleanTech Ideals is a responsive website template featuring:
+
 - Modern UI with smooth animations
 - User authentication (login/register)
 - Service showcase sections
@@ -16,7 +17,7 @@ CleanTech Ideals is a responsive website template featuring:
 - **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
 - **Backend**: PHP 7.4+
 - **Database**: MySQL
-- **Dependencies**: 
+- **Dependencies**:
   - Font Awesome (v6)
   - jQuery (v3.6)
   - SwiperJS (for testimonials)
@@ -45,19 +46,36 @@ CleanTech Ideals is a responsive website template featuring:
 ✅ Dynamic content loading  
 ✅ Contact form with validation  
 ✅ Modern UI components  
-✅ Cross-browser compatible  
+✅ Cross-browser compatible
 
 ## File Structure
-cleantech/
-├── assets/
-│ ├── css/
-│ ├── js/
-│ └── images/
-├── includes/
-│ ├── config.php
-│ ├── login.php
-│ └── register.php
-├── database/
-│ └── cleantech.sql
-├── index.php
-└── README.md
+
+-cleantech/
+-├── assets/
+-│ ├── css/
+-│ ├── js/
+-│ └── images/
+-├── includes/
+-│ ├── config.php
+-│ ├── login.php
+-│ └── register.php
+-├── database/
+-│ └── cleantech.sql
+-├── index.php
+-└── README.md
+
+## Configuration
+
+Edit these files for setup:
+
+- `includes/config.php` - Database connection
+- `.htaccess` - URL rewriting rules
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+**Developed by** [Your Name]  
+**Contact**: your.email@example.com
