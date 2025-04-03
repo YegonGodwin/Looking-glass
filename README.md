@@ -48,3 +48,16 @@ CleanTech Ideals is a responsive website template featuring:
 ✅ Cross-browser compatible  
 
 ## File Structure
+cleantech/
+├── assets/
+│ ├── css/
+│ ├── js/
+│ └── images/
+├── includes/
+│ ├── config.php
+│ ├── login.php
+│ └── register.php
+├── database/
+│ └── cleantech.sql
+├── index.php
+└── README.md
